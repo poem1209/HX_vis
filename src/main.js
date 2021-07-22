@@ -6,6 +6,7 @@ import router from './router'
 // import echarts from 'echarts'
 import * as echarts from 'echarts'
 
+
 Vue.config.productionTip = false
 Vue.prototype.$echarts = echarts
 
@@ -16,3 +17,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+

@@ -23,6 +23,7 @@ import rnn4 from '@/components/rnn4'
 import rnn5 from '@/components/rnn5'
 import rnn6 from '@/components/rnn6'
 import rnn7 from '@/components/rnn7'
+// test
 import rnn8 from '@/components/rnn8'
 
 

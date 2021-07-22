@@ -1,6 +1,7 @@
 <template>
   <div id="eChart">
-    <div id="main" style="width: 1500px;height:400px;"></div>
+    <div id="main" style="width: 1500px;height:400px;">
+    </div>
   </div>
 </template>
 
@@ -12,15 +13,24 @@ export default {
   data(){
     return {
       x_axis:[],
-      y_axis:[]
+      y_axis:[],
+      stockname:'',
+      aaa:'stock000001'
     }
   },
   created(){
     for (let i = 1;i<150;i++){
       this.x_axis.push(i);
     };
+    console.log(this.aaa+' '+typeof(this.aaa))
+    console.log('prediction  '+price.stock000008.prediction);
+    console.log('aa    '+price[this.aaa].prediction)
+    console.log(stockname)
   },
   methods: {
+    // stock(){
+    //   console.log(this.stockname)
+    // },
     myCharts(){
       // 基于准备好的dom，初始化echarts实例
       var myChart = this.$echarts.init(document.getElementById('main'));
@@ -65,7 +75,13 @@ export default {
             type: 'line',
             // stack: '总量',
             data: price.stock000008.truth
-          }
+          },
+          // {
+          //   name: 'aaa',
+          //   type: 'line',
+          //   // stack: '总量',
+          //   data: price[this.aaa].truth
+          // }
         ]
       };
       // 使用刚指定的配置项和数据显示图表。

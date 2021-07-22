@@ -6,7 +6,6 @@
 
 <script>
 import * as price from "../assets/avg.json";
-console.log('avg price',price);
 
 export default {
   name: "echarts_line",
