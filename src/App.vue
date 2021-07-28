@@ -3,7 +3,7 @@
     <img src="./assets/logo.png">
     <input type="text" placeholder="stock" v-model="stockname">
     {{stockname}}
-    <button @click="stock">chakan</button>
+    <button @click="stock">cha kan</button>
 <!--    <router-view/>-->
     <router-view :stockname="stockname"></router-view>
   </div>
@@ -14,12 +14,12 @@ export default {
   name: 'App',
   data(){
     return{
-      stockname:"00001"
+      stockname:"stock000001"
     }
   },
   methods:{
     stock(){
-      console.log(this.stockname)
+      console.log('app_stock',this.stockname)
     }
   }
 }
