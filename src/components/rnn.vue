@@ -35,24 +35,13 @@ export default {
       // this.chart.setOption(this.options);
     }
   },
-
-  // watch: {
-  //   //观察data的变化
-  //   namechange:{
-  //     handler(newVal,oldVal){
-  //       if(this.chart){
-  //
-  //       }
-  //     }
-  //   }
-  //   },
   //计算属性
   computed: {
     options() {
       console.log('computed options')
       var option = {
         title: {
-          text: '折线图'  //总标题文字
+          text: 'RNN_折线图'  //总标题文字
         },
         tooltip: {
           trigger: 'axis'
@@ -79,13 +68,13 @@ export default {
         },
         series: [
           {
-            name: 'aaa_tru',
+            name: 'rnn_tru',
             type: 'line',
             // stack: '总量',
             data: price[this.name].truth
           },
           {
-            name: 'aaa_pre',
+            name: 'rnn_pre',
             type: 'line',
             // stack: '总量',
             data: price[this.name].prediction

@@ -1,34 +1,47 @@
 <template>
   <div id="eChart">
+    <button @click="test">刷新</button>
     <div id="main" style="width: 1500px;height:400px;"></div>
   </div>
 </template>
 
 <script>
-import * as price from "../assets/rnn.json";
+import * as price from "../assets/test.json";
+console.log('price',price);
 
 export default {
   name: "echarts_line",
+  props:['stockname'],
   data(){
     return {
       x_axis:[],
-      y_axis:[]
+      y_axis:[],
+      name: this.stockname,
+      charts: ''
     }
+  },
+  mounted() {
+    this.myCharts();
   },
   created(){
     for (let i = 1;i<150;i++){
       this.x_axis.push(i);
     };
   },
-  methods: {
-    myCharts(){
-      // 基于准备好的dom，初始化echarts实例
-      var myChart = this.$echarts.init(document.getElementById('main'));
-
-      // 指定图表的配置项和数据
+  watch: {
+    stockname:function(stockname){
+      this.name = stockname;
+      console.log('LSTM_name ',this.name);
+      // this.chart.setOption(this.options);
+    }
+  },
+  //计算属性
+  computed: {
+    options() {
+      console.log('computed options')
       var option = {
         title: {
-          text: '折线图'
+          text: 'LSTM_折线图'  //总标题文字
         },
         tooltip: {
           trigger: 'axis'
@@ -55,26 +68,34 @@ export default {
         },
         series: [
           {
-            name: 'pre',
+            name: 'avg_tru',
             type: 'line',
             // stack: '总量',
-            data:price.stock000004.prediction
+            data: price[this.name].truth
           },
           {
-            name: 'truth',
+            name: 'avg_pre',
             type: 'line',
             // stack: '总量',
-            data: price.stock000004.truth
+            data: price[this.name].prediction
           }
         ]
       };
-      // 使用刚指定的配置项和数据显示图表。
-      myChart.setOption(option);
+      return option;
     }
   },
-  mounted() {
-    // this.load();
-    this.myCharts();
+  methods: {
+    test(){
+      this.chart.setOption(this.options);
+    },
+    myCharts(){
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = this.$echarts.init(document.getElementById('main'));
+      this.chart = myChart;
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(this.options);
+    }
   }
 }
 </script>
