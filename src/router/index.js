@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import echarts_line from '@/components/echarts_line'
 import echarts_jsonline from "../components/echarts_jsonline";
 import lstm from '@/components/lstm'
+import lstm1 from '@/components/lstm1'
+import lstm2 from '@/components/lstm2'
 import avg from '@/components/avg'
 // test
 import rnn from '@/components/rnn'
@@ -33,6 +35,16 @@ export default new Router({
       path: '/lstm',
       name: 'lstm',
       component: lstm
+    },
+    {
+      path: '/lstm1',
+      name: 'lstm1',
+      component: lstm1
+    },
+    {
+      path: '/lstm2',
+      name: 'lstm2',
+      component: lstm2
     },
     {
       path: '/avg',
