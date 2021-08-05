@@ -7,7 +7,7 @@
 
 <script>
 // 5是暂时还没跑完的所有
-import * as price from "../assets/lstm_5.json";
+import * as price from "../assets/lstm_05.json";
 console.log('price',price);
 
 export default {
