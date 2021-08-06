@@ -6,6 +6,7 @@ import echarts_jsonline from "../components/echarts_jsonline";
 import lstm from '@/components/lstm'
 import lstm1 from '@/components/lstm1'
 import lstm2 from '@/components/lstm2'
+import lstm3 from '@/components/lstm3'
 import avg from '@/components/avg'
 // test
 import rnn from '@/components/rnn'
@@ -45,6 +46,11 @@ export default new Router({
       path: '/lstm2',
       name: 'lstm2',
       component: lstm2
+    },
+    {
+      path: '/lstm3',
+      name: 'lstm3',
+      component: lstm3
     },
     {
       path: '/avg',
