@@ -7,7 +7,7 @@
 
 <script>
 // 实现折线图上下限区域展示
-import * as price from "../assets/testrange.json";
+import * as price from "../assets/test_range.json";
 console.log('price',price);
 
 export default {
@@ -110,7 +110,7 @@ export default {
             data: price[this.name].prediction_max
           },
           {
-            name: 'avg',
+            name: 'tru',
             type: 'line',
             data: price[this.name].truth
           },
