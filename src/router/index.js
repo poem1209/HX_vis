@@ -10,6 +10,7 @@ import lstm3 from '@/components/lstm3'
 import avg from '@/components/avg'
 // test
 import rnn from '@/components/rnn'
+import test from '@/components/test'
 
 
 
@@ -61,6 +62,11 @@ export default new Router({
       path: '/rnn',
       name: 'rnn',
       component: rnn
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test
     }
   ]
 })
