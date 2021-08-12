@@ -7,7 +7,8 @@
 
 <script>
 // 实现折线图上下限区域展示
-import * as price from "../assets/test_range.json";
+// import * as price from "../assets/test_range.json";
+import * as price from "../assets/gap000999.json";
 console.log('price',price);
 
 export default {
@@ -55,7 +56,7 @@ export default {
           }
         },
         legend: {
-          data: ['max', 'min', 'avg']
+          data: ['max-min', 'min', 'avg']
         },
         toolbox: {
           feature: {
@@ -95,9 +96,9 @@ export default {
             data: price[this.name].prediction_min
           },
           {
-            name: 'max',
+            name: 'max-min',
             type: 'line',
-            // stack: '总量',
+            stack: '总量',
             areaStyle: {
               color:'#87CEFA'
             },
@@ -107,7 +108,7 @@ export default {
             emphasis: {
               focus: 'series'
             },
-            data: price[this.name].prediction_max
+            data: price[this.name].gap
           },
           {
             name: 'tru',
