@@ -69,13 +69,13 @@ export default {
         },
         series: [
           {
-            name: 'avg_tru',
+            name: 'lstm_tru',
             type: 'line',
             // stack: '总量',
             data: price[this.name].truth
           },
           {
-            name: 'avg_pre',
+            name: 'lstm_pre',
             type: 'line',
             // stack: '总量',
             data: price[this.name].prediction

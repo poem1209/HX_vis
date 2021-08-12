@@ -97,7 +97,7 @@ export default {
           {
             name: 'max',
             type: 'line',
-            // stack: '总量',
+            stack: '总量',
             areaStyle: {
               color:'#87CEFA'
             },
