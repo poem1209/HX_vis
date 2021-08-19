@@ -8,6 +8,7 @@ import lstm1 from '@/components/lstm1'
 import lstm2 from '@/components/lstm2'
 import lstm3 from '@/components/lstm3'
 import lstm4 from '@/components/lstm4'
+import lstm5 from '@/components/lstm5'
 import avg from '@/components/avg'
 // test
 import rnn from '@/components/rnn'
@@ -58,6 +59,11 @@ export default new Router({
       path: '/lstm4',
       name: 'lstm4',
       component: lstm4
+    },
+    {
+      path: '/lstm5',
+      name: 'lstm5',
+      component: lstm5
     },
     {
       path: '/avg',

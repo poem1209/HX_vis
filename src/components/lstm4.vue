@@ -77,7 +77,13 @@ export default {
         ],
         yAxis: [
           {
-            type: 'value'
+            type: 'value',
+            max: function (value) {
+              return Math.round(value.max) + 500;
+            },
+            min:function (value){
+              return Math.round(value.min)-100;
+            }
           }
         ],
         series: [
